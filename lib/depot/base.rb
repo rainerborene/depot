@@ -1,6 +1,3 @@
-require "set"
-require "logger"
-
 module Depot
   class Base
     attr_reader :entries, :models

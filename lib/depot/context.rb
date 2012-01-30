@@ -1,5 +1,3 @@
-require "active_support/core_ext/hash"
-
 module Depot
   class Context
     attr_reader :klass, :base

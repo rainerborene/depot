@@ -6,7 +6,7 @@ Depot is a simple and more *maintainable* way to define seed data in Rails.
 
 Add this line to your application's Gemfile:
 
-  gem "depot", "~> 0.1.1", require: false
+  gem "depot", "~> 0.2", require: false
 
 == Usage
 

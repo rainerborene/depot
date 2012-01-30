@@ -1,15 +1,16 @@
 = Depot
 
-Depot is a simple and more *maintainable* way to define seed data for Rails.
+Depot is a simple and more *maintainable* way to define seed data in Rails.
 
 == Installation
 
-  # Gemfile
+Add this line to your application's Gemfile:
+
   gem "depot", "~> 0.1.1", require: false
 
 == Usage
 
-You probably did that in the old days of your +db/seeds.rb+ life.
+You've probably did that in the old days of your +db/seeds.rb+ life.
 
   # This file should contain all the record creation needed to seed the database with its default values.
   # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).

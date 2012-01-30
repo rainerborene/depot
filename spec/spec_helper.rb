@@ -1,5 +1,9 @@
+ENV["RAILS_ENV"] ||= "test"
+
 require "bundler"
 Bundler.setup(:default, :development)
+require "rails/all"
+require "rails/test_help"
 Bundler.require
 
 require "depot"

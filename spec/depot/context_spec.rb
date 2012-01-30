@@ -23,10 +23,14 @@ describe Depot::Context do
     end
   end
 
+  describe "#render_template" do
+    output = subject.call.render_template(:example, { title: "Hello World" }, "spec/fixtures")
+    output.should == "<h1>Hello World</h1>\n"
+  end
+
   describe "#create" do
     it "should create a new entry given a hash" do
       subject.create({ name: "Jonh Doe", email: "jonh@doe.com", :as => :jonh_doe })
-      @base.entries.should_not be_empty
       @base.entries.should have_key :jonh_doe
     end
 
@@ -36,7 +40,6 @@ describe Depot::Context do
         p.email = "jonh@doe.com"
       end
 
-      @base.entries.should_not be_empty
       @base.entries.should have_key :jonh_doe
     end
   end

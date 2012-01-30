@@ -2,6 +2,7 @@ require "set"
 require "logger"
 require "active_support/all"
 require "depot/base"
+require "depot/template"
 require "depot/context"
 require "depot/version"
 

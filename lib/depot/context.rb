@@ -11,6 +11,13 @@ module Depot
       @finder = criteria
     end
 
+    def render_template(template, assigns = {}, view_path = nil)
+      view_path ||= Rails.root.join("db", "seeds")
+      view = Depot::Template.new(view_path)
+      view.assign(assigns)
+      view.render :template => template.to_s
+    end
+
     def create(attributes = {})
       # remove method reference symbol
       key = attributes[:as]

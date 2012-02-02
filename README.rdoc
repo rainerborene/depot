@@ -39,7 +39,7 @@ If there were a better way to populate your database it would be like this:
     end
   end
 
-Yes, you can!
+Pretty simple, huh?
 
 == License
 

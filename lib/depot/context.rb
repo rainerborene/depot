@@ -1,16 +1,29 @@
 module Depot
   class Context
-    attr_reader :klass, :base
+    # A constant that is used to trigger the #finder method.
+    attr_reader :klass
 
+    # The base attribute references the base instance.
+    attr_reader :base
+
+    # Create a new context instance.
     def initialize(klass, base)
       @klass = klass
       @base = base
     end
 
+    # Change the finder criteria.
     def finder(criteria)
       @finder = criteria
     end
 
+    # Render template and return the string.
+    #
+    #   render_template :post, title: "Hello World"
+    #
+    # You have the ability to change the directory location, which is used to
+    # lookup the template file passing a third argument. Otherwise the
+    # +db/seeds+ path will be the default.
     def render_template(template, assigns = {}, view_path = nil)
       view_path ||= Rails.root.join("db", "seeds")
       view = Depot::Template.new(view_path)
@@ -18,6 +31,7 @@ module Depot
       view.render :template => template.to_s
     end
 
+    # Create a new entry.
     def create(attributes = {})
       # remove method reference symbol
       key = attributes[:as]
